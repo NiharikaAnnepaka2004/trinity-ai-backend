@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "agentic_ais",
+  "info": {
+    "singularName": "agentic-ai",
+    "pluralName": "agentic-ais",
+    "displayName": "Agentic AI"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Subtitle": {
+      "type": "string"
+    },
+    "HeroImage": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "HeroCTAButton": {
+      "type": "string"
+    }
+  }
+}

@@ -467,6 +467,40 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiAgenticAiAgenticAi extends Struct.CollectionTypeSchema {
+  collectionName: 'agentic_ais';
+  info: {
+    displayName: 'Agentic AI';
+    pluralName: 'agentic-ais';
+    singularName: 'agentic-ai';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    HeroCTAButton: Schema.Attribute.String;
+    HeroImage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::agentic-ai.agentic-ai'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    Subtitle: Schema.Attribute.String;
+    Title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiApproachApproach extends Struct.CollectionTypeSchema {
   collectionName: 'approaches';
   info: {
@@ -1435,6 +1469,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
+      'api::agentic-ai.agentic-ai': ApiAgenticAiAgenticAi;
       'api::approach.approach': ApiApproachApproach;
       'api::branding.branding': ApiBrandingBranding;
       'api::contact-page.contact-page': ApiContactPageContactPage;
