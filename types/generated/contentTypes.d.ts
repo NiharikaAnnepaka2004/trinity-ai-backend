@@ -623,6 +623,46 @@ export interface ApiFooterFooter extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiGenerativeAiSolutionGenerativeAiSolution
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'generative_ai_solutions';
+  info: {
+    displayName: 'GenerativeAISolution';
+    pluralName: 'generative-ai-solutions';
+    singularName: 'generative-ai-solution';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    ctaButtonText: Schema.Attribute.String;
+    ctaDescription: Schema.Attribute.String;
+    ctaTitle: Schema.Attribute.String;
+    description: Schema.Attribute.Blocks;
+    features: Schema.Attribute.JSON;
+    industryUseCases: Schema.Attribute.Blocks;
+    keyBenefits: Schema.Attribute.Blocks;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::generative-ai-solution.generative-ai-solution'
+    > &
+      Schema.Attribute.Private;
+    provenResultsDescription: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    shortDescription: Schema.Attribute.String;
+    subtitle: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    whyChooseSection: Schema.Attribute.Blocks;
+  };
+}
+
 export interface ApiHeroSectionHeroSection extends Struct.CollectionTypeSchema {
   collectionName: 'hero_sections';
   info: {
@@ -1400,6 +1440,7 @@ declare module '@strapi/strapi' {
       'api::contact-page.contact-page': ApiContactPageContactPage;
       'api::contact.contact': ApiContactContact;
       'api::footer.footer': ApiFooterFooter;
+      'api::generative-ai-solution.generative-ai-solution': ApiGenerativeAiSolutionGenerativeAiSolution;
       'api::hero-section.hero-section': ApiHeroSectionHeroSection;
       'api::industry.industry': ApiIndustryIndustry;
       'api::mission.mission': ApiMissionMission;

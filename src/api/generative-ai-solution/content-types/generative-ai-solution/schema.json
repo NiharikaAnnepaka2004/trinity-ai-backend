@@ -1,0 +1,51 @@
+{
+  "kind": "collectionType",
+  "collectionName": "generative_ai_solutions",
+  "info": {
+    "singularName": "generative-ai-solution",
+    "pluralName": "generative-ai-solutions",
+    "displayName": "GenerativeAISolution"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "shortDescription": {
+      "type": "string"
+    },
+    "description": {
+      "type": "blocks"
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "features": {
+      "type": "json"
+    },
+    "keyBenefits": {
+      "type": "blocks"
+    },
+    "industryUseCases": {
+      "type": "blocks"
+    },
+    "whyChooseSection": {
+      "type": "blocks"
+    },
+    "provenResultsDescription": {
+      "type": "string"
+    },
+    "ctaTitle": {
+      "type": "string"
+    },
+    "ctaDescription": {
+      "type": "string"
+    },
+    "ctaButtonText": {
+      "type": "string"
+    }
+  }
+}
